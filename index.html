@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCD-Download</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">NCD</div>
+    <div class="nav-links">
+      <a href="#screenshots">Interface</a>
+      <a href="files/NCD_Setup.exe" download>Download</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Specialized Discrete Element Simulation Tool</h1>
+        <p>A fast, precise, and scalable DEM platform that supports custom features and domain-specific applications.</p>
+        <a href="files/NCD_Setup.exe" download class="btn-download">⬇ Download for Windows</a>
+      </div>
+      <div class="hero-image">
+        <img src="images/demo1.png" alt="software interface 1" class="img-switch active">
+        <img src="images/demo2.png" alt="software interface 2" class="img-switch">
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots" class="dark-section">
+    <div class="image-gallery">
+      <img src="images/screenshot1.png" alt="software UI 1">
+      <img src="images/screenshot2.png" alt="software UI 2">
+      <img src="images/screenshot3.png" alt="software UI 3">
+      <img src="images/screenshot4.png" alt="software UI 4">
+      <img src="images/screenshot5.png" alt="software UI 5">
+      <img src="images/screenshot6.png" alt="software UI 6">
+      <img src="images/screenshot7.png" alt="software UI 7">
+      <img src="images/screenshot8.png" alt="software UI 8">
+      <img src="images/screenshot9.png" alt="software UI 9">
+      <img src="images/screenshot10.png" alt="software UI 10">
+    </div>
+  </section>
+
+  <section id="contact" class="dark-section">
+    <p>Developer: RORCC</p>
+    <p>Email: <a href="mailto:zhangsen@rorcc.com">zhangsen@rorcc.com</a></p>
+    <p>© 2025 MySoftware. All Rights Reserved.</p>
+  </section>
+
+  <script>
+    document.querySelectorAll('.hero-image img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.querySelectorAll('.hero-image img').forEach(i => i.classList.remove('active'));
+        img.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

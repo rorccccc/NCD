@@ -1,0 +1,358 @@
+/* =======================================================
+   🌟 全局基础样式设置
+   ======================================================= */
+body {
+  margin: 0; /* 去除默认外边距，页面紧贴浏览器边缘 */
+  font-family: "Segoe UI", Helvetica, sans-serif; /* 设置全局字体 */
+  background:
+    radial-gradient(rgba(180, 60, 0, 0.15) 3px, transparent 2px) repeat, /* 背景点阵层 */
+    linear-gradient(to bottom right, #ffffff, #ffe8d2); /* 渐变底色层 */
+  background-size: 20px 20px, 100% 100%; /* 调整点阵密度和渐变范围 */
+  color: #333; /* 全局字体颜色 */
+  scroll-behavior: smooth; /* 平滑滚动效果 */
+}
+
+/* =======================================================
+   🌟 标题与文本样式
+   ======================================================= */
+h1, h2, h3 {
+  font-weight: 600; /* 标题半粗体 */
+  color: #663300; /* 深棕橙主题色 */
+}
+
+p {
+  line-height: 1.7; /* 提高段落行距，增强可读性 */
+}
+
+/* =======================================================
+   🌟 链接样式
+   ======================================================= */
+a {
+  color: #ff7b00; /* 橙色链接 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+a:hover {
+  color: #cc6100; /* 悬停时变深橙色 */
+}
+
+/* =======================================================
+   🌟 顶部导航栏（固定在页面顶部）
+   ======================================================= */
+nav {
+  position: fixed; /* 固定位置 */
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95); /* 半透明白背景 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 底部阴影 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000; /* 保证导航在最上层 */
+}
+
+/* Logo 样式 */
+nav .logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #b24a00;
+}
+
+/* 导航链接样式 */
+nav .nav-links a {
+  margin-left: 20px;
+  font-weight: 600;
+  color: #b24a00; /* 深橙文字 */
+  transition: 0.2s;
+}
+
+nav .nav-links a:hover {
+  color: #8c3b00; /* 悬停更深 */
+}
+
+/* =======================================================
+   🌟 Hero 顶部横幅（主视觉区域）
+   ======================================================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4%; /* 页面左右留白 */
+}
+
+/* Hero 内容容器（左文字 + 右图片） */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* 小屏幕自动换行 */
+  width: 100%;
+  max-width: 1400px;
+  gap: 180px; /* 左右间距 */
+}
+
+/* 左侧文字区域 */
+.hero-text {
+  flex: 1.2;
+  min-width: 360px;
+  color: #4b1f00;
+  padding-right: 40px;
+  padding-left: 0;
+}
+
+/* 主标题 */
+.hero-text h1 {
+  font-size: 40px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #4b1f00;
+  font-weight: 700;
+}
+
+/* 副标题 */
+.hero-text p {
+  font-size: 24px;
+  color: #5c2a00;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* =======================================================
+   🌟 视觉增强版按钮样式
+   ======================================================= */
+.btn-download {
+  display: inline-block; /* 使按钮可定义宽高 */
+  background: #ff7b00; /* 按钮橙色背景 */
+  color: #fff; /* 白色文字 */
+  padding: 12px 30px; /* 内边距 */
+  border-radius: 8px; /* 圆角 */
+  font-weight: bold; /* 加粗文字 */
+  transition: all 0.2s ease; /* 平滑过渡 */
+  box-shadow: 0 4px 0 #cc6100; /* 默认下方阴影（模拟立体按钮） */
+  cursor: pointer; /* 鼠标悬停时显示手形 */
+  text-align: center; /* 居中对齐文字 */
+}
+
+/* 悬停时按钮上浮变色 */
+.btn-download:hover {
+  background: #cc6100; /* 深橙色背景 */
+  box-shadow: 0 3px 0 #994800; /* 阴影稍浅 */
+  color: #fff; /* 保持白色文字 */
+}
+
+/* 点击时视觉下沉效果 */
+.btn-download:active {
+  background: #b55200; /* 更深橙色 */
+  box-shadow: 0 1px 0 #7a3700; /* 阴影变浅，模拟按下去 */
+  transform: translateY(2px); /* 下沉效果 */
+  color: #fff; /* 保持白色文字 */
+}
+
+/* 焦点状态（键盘操作时） */
+.btn-download:focus {
+  outline: none; /* 去掉默认蓝色外框 */
+  color: #fff;
+}
+
+/* =======================================================
+   🌟 Hero 右侧图片区域
+   ======================================================= */
+.hero-image {
+  position: relative;
+  flex: 1.6;
+  min-width: 700px;
+  height: 580px;
+  text-align: center;
+  perspective: 1000px; /* 保留3D透视效果 */
+}
+
+.hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  max-width: 800px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.hero-image img.active {
+  z-index: 2;
+  transform: scale(1.08) translateY(-15px) translateX(20px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+}
+
+.hero-image img:not(.active) {
+  z-index: 1;
+  transform: scale(1.0) translateX(-60px);
+  opacity: 0.9;
+}
+
+/* =======================================================
+   🌟 功能展示区块
+   ======================================================= */
+section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-item {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #ffb347;
+  transition: 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================================================
+   🌟 图片横向滑动展示区（10张图）
+   ======================================================= */
+#screenshots.dark-section {
+  background: rgba(159, 99, 49, 0.3);
+  color: #ffead6;
+  padding: 30px 5%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 滑动画廊主体 */
+.image-gallery {
+  display: flex;
+  overflow-x: auto; /* 横向滚动 */
+  scroll-behavior: smooth; /* 平滑滚动 */
+  scroll-snap-type: x mandatory; /* 吸附滚动效果 */
+  gap: 25px;
+  padding: 20px 5%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 180, 80, 0.5) transparent;
+}
+
+/* 浏览器滚动条美化（Chrome、Edge、Safari） */
+.image-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.image-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+.image-gallery::-webkit-scrollbar-thumb {
+  background: rgba(255, 180, 80, 0.4);
+  border-radius: 10px;
+}
+.image-gallery::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 180, 80, 0.8);
+}
+
+/* 单张图片样式 */
+.image-gallery img {
+  flex: 0 0 auto;
+  scroll-snap-align: center; /* 滚动时自动对齐 */
+  width: 340px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 180, 80, 0.35);
+}
+
+/* =======================================================
+   🌟 联系我们区块
+   ======================================================= */
+#contact.dark-section {
+  background: rgba(159, 99, 49, 0.85);
+  color: #ffe9d1;
+  text-align: center;
+  padding: 20px 5%;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+#contact h2 {
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  margin: 8px 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+#contact a {
+  color: #ffb347;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  color: #ffd580;
+}
+
+#contact p:last-child {
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+
+/* =======================================================
+   🌟 响应式布局（不同屏幕自动适配）
+   ======================================================= */
+
+/* 中等屏幕（≤1200px） */
+@media (max-width: 1200px) {
+  .hero { padding: 0 5%; }
+  .hero-content { gap: 80px; }
+  .hero-text { flex: 1; padding: 0 20px; }
+  .hero-text h1 { font-size: 38px; }
+  .hero-image { flex: 1.3; min-width: 550px; height: 480px; }
+  .hero-image img { width: 100%; max-width: 700px; }
+}
+
+/* 平板（≤992px） */
+@media (max-width: 992px) {
+  .hero-content { flex-direction: column; text-align: center; gap: 40px; }
+  .hero-text { padding: 0 10px; }
+  .hero-text h1 { font-size: 36px; }
+  .hero-text p { font-size: 20px; line-height: 1.7; }
+  .hero-image { width: 100%; height: 400px; min-width: unset; }
+  .hero-image img { position: relative; width: 100%; max-width: 600px; transform: none !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+}
+
+/* 手机竖屏（≤600px） */
+@media (max-width: 600px) {
+  .hero { padding: 20px; }
+  .hero-text h1 { font-size: 30px; }
+  .hero-text p { font-size: 18px; line-height: 1.6; }
+  .btn-download { font-size: 16px; padding: 10px 24px; }
+  .hero-image { height: 300px; }
+  .hero-image img { max-width: 100%; border-radius: 10px; transform: none !important; }
+}
